@@ -56,7 +56,11 @@
 :root {
   --electric-blue: #3b82f6;
   --deep-violet: #8b5cf6;
-  
+
+  --margin-desctop: "28";
+  --margin-mobile: "36";
+  --container-max: ;
+
   --background: #030712;
   --foreground: #f9fafb;
 
