@@ -1,6 +1,7 @@
-import DatabaseAnimation from "@/components/sections/database-animation";
 import HeroSection from "@/components/sections/hero-section";
 import TechnologyStack from "@/components/sections/technology-stack";
+import DatabaseAnimation from "@/components/sections/database-animation";
+// import TestGSAP from "@/components/sections/testGSAP";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <TechnologyStack />
       <DatabaseAnimation />
+      {/* <TestGSAP /> */}
     </main>
   );
 }

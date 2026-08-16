@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
 import { Boxes, Database, MonitorSmartphone } from "lucide-react";
 import SectionHeading from "../ui/section-heading";
-import { containerVariants, itemVariants } from "@/lib/animations";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { animateFadeUpStagger } from "@/lib/animations";
 
 export default function TechnologyStack() {
 
@@ -48,29 +49,31 @@ export default function TechnologyStack() {
             metric: "Row-level policies enforced at the database boundary",
         },
     ]
+
+
+    const containerRef = useRef<HTMLElement>(null);
+
+    useGSAP(() => {
+        animateFadeUpStagger(".section-item", containerRef.current, 20, 0.1, 0.15);
+    }, { scope: containerRef })
+
     return (
-        <motion.section
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            className="border-b technology-stack border-border">
+        <section
+            ref={containerRef}
+            className="border-b technology-stack border-border bg-background"
+        >
             <div className="container mx-auto px-padding-x-desktop max-w-container-max py-padding-y-mobile sm:py-padding-y-desktop">
                 <SectionHeading
                     tag="// Stack"
                     heading="The technology stack, chosen for consequence — not convenience."
                     description="Three layers. Each selected because it removes an entire class of failure from the system, not because it trends well."
                 />
-                <div className="grid grid-cols-1 gap-px mt-16 border bg-border lg:grid-cols-2">
+                <div className="grid grid-cols-1 gap-px mt-16 border section-item bg-border lg:grid-cols-2">
                     {stackedCardsData.map((card) => {
                         return (
-                            <motion.div
+                            <div
                                 key={card.id}
-                                variants={itemVariants}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={{ once: true, amount: 0.5 }}
-                                className={`relative col-span-1 border border-border group ${card.id === 3 ? "lg:col-span-2" : "col-span-1"}`}
+                                className={`section-item relative col-span-1 border border-border group ${card.id === 3 ? "lg:col-span-2" : "col-span-1"}`}
                             >
                                 <div className="absolute transition-opacity duration-500 ease-out opacity-0 pointer-events-none bg-linear-to-br from-electric-blue via-electric-blue/20 to-deep-violet group-hover:opacity-100 inset-px"> </div>
                                 <article className="relative flex flex-col justify-between h-full gap-5 p-8 transition-colors duration-500 ease-out bg-background group-hover:bg-white/2 sm:p-10 ">
@@ -109,11 +112,11 @@ export default function TechnologyStack() {
                                         </p>
                                     </div>
                                 </article>
-                            </motion.div>
+                            </div>
                         )
                     })}
                 </div>
             </div>
-        </motion.section>
+        </section>
     )
 }
