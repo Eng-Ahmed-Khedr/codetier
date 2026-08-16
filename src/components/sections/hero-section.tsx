@@ -1,34 +1,59 @@
 "use client";
 
 
-import { motion } from "motion/react";
-import { containerVariants, itemVariants } from "@/lib/animations";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 export default function HeroSection() {
+
+    const containerRef = useRef<HTMLElement>(null);
+
+    const animateFadeUpStagger = (target: gsap.DOMTarget, y_axis: number = 0, delay: number = 0, stagger: number = 0) => {
+        return gsap.from(target, {
+            y: y_axis,
+            opacity: 0,
+            duration: 0.8,
+            delay: delay,
+            stagger: stagger,
+            ease: "power3.out",
+        })
+    }
+
+    useGSAP(() => {
+        animateFadeUpStagger(".hero-item", 20, 0.1, 0.15)
+    }, { scope: containerRef });
+
     return (
-        <motion.section
-            className="border-b heroSection border-border"
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
+        <section
+            ref={containerRef}
+            className="border-b heroSection border-border bg-background"
         >
-            <div className="container min-h-[91vh] mx-auto px-padding-x-desktop max-w-container-max py-padding-y-mobile sm:pt-36 sm:pb-47">
-                <motion.div variants={itemVariants}>
+            <div
+                className="container hero-item min-h-[91vh] mx-auto px-padding-x-desktop max-w-container-max py-padding-y-mobile sm:pt-36 sm:pb-47"
+            >
+                <div
+                    className="hero-item"
+                >
                     <p className="font-mono text-xs tracking-[0.2em] text-primary uppercase">
                         // Enterprise software engineering
                     </p>
-                </motion.div>
-                <motion.div variants={itemVariants}>
+                </div>
+                <div
+                    className="hero-item"
+                >
                     <h1 className="max-w-4xl mt-8 leading-[1.08] font-medium tracking-tight text-balance text-foreground sm:text-6xl text-4xl">
                         Systems engineered for operators who cannot afford downtime.
                     </h1>
-                </motion.div>
-                <motion.div variants={itemVariants}>
+                </div>
+                <div
+                    className="hero-item"
+                >
                     <p className="max-w-2xl mt-8 leading-relaxed text-pretty text-muted-foreground">
                         Codetier Systems designs and delivers high-throughput web platforms and zero-bloat native desktop terminals. Fixed architecture, typed contracts, sovereign handover.
                     </p>
-                </motion.div>
-                <motion.div variants={itemVariants} className="mt-16">
+                </div>
+                <div className="mt-16 hero-item">
                     <dl className="grid max-w-3xl grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
                         <div className="px-5 py-6 bg-background">
                             <dt className="font-mono text-[10px] tracking-[0.18em] text-muted-foreground/70 uppercase">
@@ -63,8 +88,8 @@ export default function HeroSection() {
                             </dd>
                         </div>
                     </dl>
-                </motion.div>
+                </div>
             </div>
-        </motion.section>
+        </section>
     );
 };

@@ -21,6 +21,7 @@
 
   --color-electric-blue: var(--electric-blue);
   --color-deep-violet: var(--deep-violet);
+  --color-green-text: var(--green-text);
 
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
@@ -63,6 +64,8 @@
 :root {
   --electric-blue: #3b82f6;
   --deep-violet: #8b5cf6;
+
+  --green-text: #10b981;
 
   --background: #030712;
   --foreground: #f9fafb;
