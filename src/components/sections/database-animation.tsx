@@ -95,7 +95,7 @@ export default function DatabaseAnimation() {
                         </div>
                         <div
                             ref={dashboardRef}
-                            className="z-10 grid w-full max-w-2xl col-start-1 row-start-1 gap-6 p-6 mx-6 translate-y-20 border rounded-sm shadow-2xl opacity-0 border-border bg-background">
+                            className="z-10 grid w-full max-w-2xl col-start-1 row-start-1 gap-6 p-6 translate-y-20 border rounded-sm shadow-2xl opacity-0 border-border bg-background">
                             <div className="col-span-1 p-4 border rounded-sm border-border">
                                 <p className="font-mono text-[10px] tracking-[0.16em] text-[#6b7280] uppercase">
                                     Server Status
