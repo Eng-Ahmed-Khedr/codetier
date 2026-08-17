@@ -6,49 +6,50 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { animateFadeUpStagger } from "@/lib/animations";
 
+const stackedCardsData = [
+    {
+        id: 1,
+        icon: <Boxes className="transition-colors duration-500 ease-out text-muted-foreground group-hover:text-primary" size={20} strokeWidth={1.5} />,
+        title: "Frontend Pipelines",
+        description: "Server-first rendering pipelines built on the App Router. Streamed payloads, strict component boundaries, and zero client-side waterfalls.",
+        tags: [
+            "React 19",
+            "Next.js App Router",
+            "Tailwind CSS",
+            "RSC",
+        ],
+        metric: "Median LCP 0.9s across audited deployments",
+    },
+    {
+        id: 2,
+        icon: <MonitorSmartphone className="transition-colors duration-500 ease-out text-muted-foreground group-hover:text-primary" size={20} strokeWidth={1.5} />,
+        title: "Native Terminals",
+        description: "Zero-bloat cross-platform desktop clients compiled to native binaries. Rust core, system webview, offline by default.",
+        tags: [
+            "Tauri v2",
+            "Rust",
+            "IPC Commands",
+            "Auto-Update",
+        ],
+        metric: "Shipped installers under 8 MB — Windows, macOS, Linux",
+    },
+    {
+        id: 3,
+        icon: <Database className="transition-colors duration-500 ease-out text-muted-foreground group-hover:text-primary" size={20} strokeWidth={1.5} />,
+        title: "Data & State",
+        description: "Deterministic state machines on the client, normalized persistence on the edge. Every mutation is typed, traced, and reversible.",
+        tags: [
+            "Redux Toolkit",
+            "SQLite",
+            "Supabase",
+            "Postgres RLS",
+        ],
+        metric: "Row-level policies enforced at the database boundary",
+    },
+];
+
 export default function TechnologyStack() {
 
-    const stackedCardsData = [
-        {
-            id: 1,
-            icon: <Boxes className="transition-colors duration-500 ease-out text-muted-foreground group-hover:text-primary" size={20} strokeWidth={1.5} />,
-            title: "Frontend Pipelines",
-            description: "Server-first rendering pipelines built on the App Router. Streamed payloads, strict component boundaries, and zero client-side waterfalls.",
-            tags: [
-                "React 19",
-                "Next.js App Router",
-                "Tailwind CSS",
-                "RSC",
-            ],
-            metric: "Median LCP 0.9s across audited deployments",
-        },
-        {
-            id: 2,
-            icon: <MonitorSmartphone className="transition-colors duration-500 ease-out text-muted-foreground group-hover:text-primary" size={20} strokeWidth={1.5} />,
-            title: "Native Terminals",
-            description: "Zero-bloat cross-platform desktop clients compiled to native binaries. Rust core, system webview, offline by default.",
-            tags: [
-                "Tauri v2",
-                "Rust",
-                "IPC Commands",
-                "Auto-Update",
-            ],
-            metric: "Shipped installers under 8 MB — Windows, macOS, Linux",
-        },
-        {
-            id: 3,
-            icon: <Database className="transition-colors duration-500 ease-out text-muted-foreground group-hover:text-primary" size={20} strokeWidth={1.5} />,
-            title: "Data & State",
-            description: "Deterministic state machines on the client, normalized persistence on the edge. Every mutation is typed, traced, and reversible.",
-            tags: [
-                "Redux Toolkit",
-                "SQLite",
-                "Supabase",
-                "Postgres RLS",
-            ],
-            metric: "Row-level policies enforced at the database boundary",
-        },
-    ]
 
 
     const containerRef = useRef<HTMLElement>(null);

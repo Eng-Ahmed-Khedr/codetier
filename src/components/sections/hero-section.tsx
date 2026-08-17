@@ -1,27 +1,15 @@
 "use client";
 
-
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { animateFadeUpStagger } from "@/lib/animations";
 
 export default function HeroSection() {
 
     const containerRef = useRef<HTMLElement>(null);
 
-    const animateFadeUpStagger = (target: gsap.DOMTarget, y_axis: number = 0, delay: number = 0, stagger: number = 0) => {
-        return gsap.from(target, {
-            y: y_axis,
-            opacity: 0,
-            duration: 0.8,
-            delay: delay,
-            stagger: stagger,
-            ease: "power3.out",
-        })
-    }
-
     useGSAP(() => {
-        animateFadeUpStagger(".hero-item", 20, 0.1, 0.15)
+        animateFadeUpStagger(".hero-item", null, 20, 0.1, 0.15)
     }, { scope: containerRef });
 
     return (
@@ -30,7 +18,7 @@ export default function HeroSection() {
             className="border-b heroSection border-border bg-background"
         >
             <div
-                className="container hero-item min-h-[91vh] mx-auto px-padding-x-desktop max-w-container-max py-padding-y-mobile sm:pt-36 sm:pb-47"
+                className="container min-h-[91vh] mx-auto px-padding-x-desktop max-w-container-max py-padding-y-mobile sm:pt-36 sm:pb-47"
             >
                 <div
                     className="hero-item"

@@ -7,7 +7,7 @@ if (typeof window !== "undefined") {
 
 export const animateFadeUpStagger = (
     target: gsap.DOMTarget,
-    triggerElement: gsap.DOMTarget,
+    triggerElement: gsap.DOMTarget | null = null,
     y_axis: number = 0,
     delay: number = 0,
     stagger: number = 0) => {
@@ -18,11 +18,14 @@ export const animateFadeUpStagger = (
         delay: delay,
         stagger: stagger,
         ease: "power3.out",
-        scrollTrigger: {
-            trigger: triggerElement,
-            start: "40% bottom",
-            once: true,
-        },
+        ...(triggerElement && {
+            scrollTrigger: {
+                trigger: triggerElement,
+                start: "40% bottom",
+                once: true,
+            },
+
+        })
     })
 }
 
