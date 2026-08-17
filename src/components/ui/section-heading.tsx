@@ -8,7 +8,7 @@ export default function SectionHeading({ tag, heading, description }: { tag: str
     const containerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        animateFadeUpStagger(".heading-item", containerRef.current, 20, 0.1, 0.15);
+        animateFadeUpStagger(".heading-item", 40, 20, 0.1, 0.15);
     }, { scope: containerRef })
 
     return (
