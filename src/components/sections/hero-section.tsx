@@ -9,7 +9,7 @@ export default function HeroSection() {
     const containerRef = useRef<HTMLElement>(null);
 
     useGSAP(() => {
-        animateFadeUpStagger(".hero-item", null, 20, 0.1, 0.15)
+        animateFadeUpStagger(".hero-item", 0, 20, 0.1, 0.15)
     }, { scope: containerRef });
 
     return (

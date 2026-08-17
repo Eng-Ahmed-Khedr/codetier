@@ -94,7 +94,7 @@ export default function Architectures() {
     const containerRef = useRef<HTMLElement>(null);
 
     useGSAP(() => {
-        animateFadeUpStagger(".caseItem", containerRef.current, 20, 0.1, 0.15);
+        animateFadeUpStagger(".caseItem", 0, 20, 0.1, 0.15);
     }, { scope: containerRef })
 
     return (

@@ -55,7 +55,7 @@ export default function TechnologyStack() {
     const containerRef = useRef<HTMLElement>(null);
 
     useGSAP(() => {
-        animateFadeUpStagger(".section-item", containerRef.current, 20, 0.1, 0.15);
+        animateFadeUpStagger(".section-item", 40, 20, 0.1, 0.15);
     }, { scope: containerRef })
 
     return (
@@ -69,7 +69,7 @@ export default function TechnologyStack() {
                     heading="The technology stack, chosen for consequence — not convenience."
                     description="Three layers. Each selected because it removes an entire class of failure from the system, not because it trends well."
                 />
-                <div className="grid grid-cols-1 gap-px mt-16 border section-item bg-border lg:grid-cols-2">
+                <div className="grid grid-cols-1 gap-px mt-16 border bg-border lg:grid-cols-2">
                     {stackedCardsData.map((card) => {
                         return (
                             <div
