@@ -28,28 +28,3 @@ export const animateFadeUpStagger = (
         },
     });
 };
-
-// export const animateFadeUpStagger = (
-//     target: gsap.DOMTarget,
-//     triggerElement: gsap.DOMTarget | null = null,
-//     staggerStart: number = 0,
-//     y_axis: number = 0,
-//     delay: number = 0,
-//     stagger: number = 0) => {
-//     return gsap.from(target, {
-//         y: y_axis,
-//         opacity: 0,
-//         duration: 0.8,
-//         delay: delay,
-//         stagger: stagger,
-//         ease: "power3.out",
-//         ...(triggerElement && {
-//             scrollTrigger: {
-//                 trigger: triggerElement,
-//                 start: `${staggerStart}% bottom`,
-//                 once: true,
-//             },
-
-//         })
-//     })
-// }
