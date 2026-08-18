@@ -35,7 +35,7 @@ export default function FullStackAnimation() {
             y: -20,
             opacity: 0.8,
             ease: "none",
-            duration: 1,
+            duration: 0.5,
         }, "phase1");
 
         tl.to(dashboardRef.current, {
@@ -43,7 +43,7 @@ export default function FullStackAnimation() {
             y: 0,
             opacity: 1,
             ease: "none",
-            duration: 1,
+            duration: 0.5,
         }, "phase1");
 
         tl.to({}, { duration: 0.2 });
@@ -53,7 +53,7 @@ export default function FullStackAnimation() {
             y: -40,
             opacity: 0.5,
             ease: "none",
-            duration: 1,
+            duration: 0.5,
         }, "phase2")
 
         tl.to(dashboardRef.current, {
@@ -61,7 +61,7 @@ export default function FullStackAnimation() {
             y: -20,
             opacity: 0.9,
             ease: "none",
-            duration: 1,
+            duration: 0.5,
         }, "phase2");
 
 
@@ -70,7 +70,7 @@ export default function FullStackAnimation() {
             y: 20,
             opacity: 1,
             ease: "none",
-            duration: 1,
+            duration: 0.5,
         }, "phase2")
 
         tl.to({}, { duration: 0.1 });
