@@ -11,6 +11,22 @@ if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 };
 
+
+const cardAssets = {
+    bottom: {
+        src: "/fullstack-animation/bottom-card.png",
+        alt: "Code editor window displaying a Rust file named architecture.rs with an asynchronous database query implementation"
+    },
+    middle: {
+        src: "/fullstack-animation/middle-card.png",
+        alt: "Network Layer dashboard panel showing 99.98% server uptime, 84ms database query latency, and a bar chart of request volume"
+    },
+    top: {
+        src: "/fullstack-animation/top-card.png",
+        alt: "Compiled Stack status panel indicating the frontend runtime, database layer, message queue, and cache layer are all operational with zero degradation"
+    }
+} as const;
+
 export default function FullStackAnimation() {
 
     const trackRef = useRef<HTMLElement>(null);
@@ -92,30 +108,30 @@ export default function FullStackAnimation() {
                     <div className="grid max-w-2xl grid-cols-1 grid-rows-1 mx-auto mt-12 sm:mt-24 animation">
                         <Image
                             ref={codeRef}
-                            src="/fullstack-animation/bottom-card.png"
-                            alt=""
-                            width={1800}
-                            height={1200}
+                            src={cardAssets.bottom.src}
+                            alt={cardAssets.bottom.alt}
+                            width={963}
+                            height={594}
                             sizes="(max-width: 1024px) 100vw, 50vw"
                             priority
                             className="z-0 w-full max-w-2xl col-start-1 row-start-1 "
                         />
                         <Image
                             ref={dashboardRef}
-                            src="/fullstack-animation/middle-card.png"
-                            alt=""
-                            width={1800}
-                            height={1200}
+                            src={cardAssets.middle.src}
+                            alt={cardAssets.middle.alt}
+                            width={963}
+                            height={594}
                             sizes="(max-width: 1024px) 100vw, 50vw"
                             loading="lazy"
                             className="z-10 w-full max-w-2xl col-start-1 row-start-1 translate-y-20 opacity-0"
                         />
                         <Image
                             ref={stackRef}
-                            src="/fullstack-animation/top-card.png"
-                            alt=""
-                            width={1800}
-                            height={1200}
+                            src={cardAssets.top.src}
+                            alt={cardAssets.top.alt}
+                            width={963}
+                            height={594}
                             sizes="(max-width: 1024px) 100vw, 50vw"
                             loading="lazy"
                             className="z-20 w-full max-w-2xl col-start-1 row-start-1 translate-y-20 opacity-0"
